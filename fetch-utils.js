@@ -3,7 +3,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function insertItem() {
+export async function createItem() {
     const response = await client
         .from('shopping_list')
         .insert('item');
@@ -19,6 +19,24 @@ export async function getItems() {
     return response.body;
 }
 
+export async function deleteAllItems() {
+    const user = await getUser();
+    const response = await client
+        .from('shopping_list')
+        .delete()
+        .match({ user_id: user.id });
+
+    return response.body;
+}
+
+export async function buyItem(id) {
+    const response = await client
+        .from('shopping_list')
+        .update({ is_bought: true })
+        .match({ id });
+
+    return response.body;
+}
 
 
 export function getUser() {
