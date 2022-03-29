@@ -28,7 +28,7 @@ Additional considerations:
 ## Supabase Table (state) Data Model / Schema
 	'shopping_list'
 	- amount: int2
-	- item_name: string
+	- item: string
 	- is_bought: boolean
 
 ## Home Page (Auth)
