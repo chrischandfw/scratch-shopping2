@@ -24,3 +24,37 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+## Supabase Table (state) Data Model / Schema
+	'shopping_list'
+	- amount: int2
+	- item_name: string
+	- is_bought: boolean
+
+## Home Page (Auth)
+	- comes with the template
+
+## Shopping List
+	- form
+	- destination/list div
+	- delete button
+
+## Events
+	- on load
+		- fetch and display user's existing list items
+			- call supabase to fetch all shopping items for this user
+			- loop through those items, create DOM elements, and append -- render items differently if "bought: true"
+	- submit 'add item' form
+		- add the new item and quantity to the list
+			- send the new item to supabase and create a new row
+			- clear out the old list
+			- fetch the list again
+			- loop through those items, create DOM elements, and append -- render items differently if "bought: true"
+	- user clicks "2 pounds of flour"
+		-"2 pounds of flour" counts as "bought" and is crossed out from the list
+			- update 'bought' to true in the database
+			- clear out the old list
+			- fetch the list again
+			- loop through those items, create DOM elements, and append -- render items differently if "bought: true"
+	- on click delete list button
+		-redisplay all items (which should ne an empty list now)
