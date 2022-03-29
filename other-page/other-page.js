@@ -60,3 +60,7 @@ deleteButton.addEventListener('click', async () => {
     await deleteAllItems();
     await fetchAndDisplayList();
 });
+
+window.addEventListener('load', () => {
+    fetchAndDisplayList();
+});
