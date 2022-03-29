@@ -58,3 +58,11 @@ Additional considerations:
 			- loop through those items, create DOM elements, and append -- render items differently if "bought: true"
 	- on click delete list button
 		-redisplay all items (which should ne an empty list now)
+
+## Functions	
+	ASYNC: createItem(item) : create a item in supabase for the logged-in user	1
+	ASYNC: deleteAllItems() : delete all items in supabasefor the logged-in user	1
+	ASYNC: getItems() : get all items in supabase for the logged-in user	1
+	ASYNC: buyItem(id) : complete this items in supabase for the logged-in user	1
+	PURE: renderItem(item) : takes in an item object and returns a DOM element	1
+	IMPURE: fetchAndDisplayList() : fetchest the items, clears out the list, and redisplays them
