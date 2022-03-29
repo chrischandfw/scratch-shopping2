@@ -34,3 +34,24 @@ shoppingForm.addEventListener('submit', async (e) => {
 
 	//await fetchAndDisplayList();
 });
+
+async function fetchAndDisplayList() {
+    shoppingListEl.textContent = '';
+
+    const itemData = await getItems();
+
+    for (let item of itemData) {
+        const itemEl = renderItem(item);
+
+        if (item.is_bought) {
+            itemEl.classList.add('is_bought');
+        } else {
+            itemEl.addEventListener('click', async () => {
+                await buyItem(item.id);
+
+                //fetchAndDisplayList();
+            });
+        }
+        shoppingListEl.append(itemEl);
+    }
+}
