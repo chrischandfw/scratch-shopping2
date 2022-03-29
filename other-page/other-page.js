@@ -32,7 +32,7 @@ shoppingForm.addEventListener('submit', async (e) => {
 
     shoppingForm.reset();
 
-	//await fetchAndDisplayList();
+    await fetchAndDisplayList();
 });
 
 async function fetchAndDisplayList() {
@@ -55,3 +55,8 @@ async function fetchAndDisplayList() {
         shoppingListEl.append(itemEl);
     }
 }
+
+deleteButton.addEventListener('click', async () => {
+    await deleteAllItems();
+    await fetchAndDisplayList();
+});
