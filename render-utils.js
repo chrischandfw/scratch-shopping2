@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export function renderItem(item) {
     const renderItemEl = document.createElement('div');
     const itemName = document.createElement('p');

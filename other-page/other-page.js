@@ -49,7 +49,7 @@ async function fetchAndDisplayList() {
             itemEl.addEventListener('click', async () => {
                 await buyItem(item.id);
 
-                //fetchAndDisplayList();
+                fetchAndDisplayList();
             });
         }
         shoppingListEl.append(itemEl);

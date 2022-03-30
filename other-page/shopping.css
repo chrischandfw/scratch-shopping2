@@ -1,0 +1,8 @@
+.complete {
+	text-decoration: line-through;
+	background-color: gold;
+}
+
+.incomplete {
+	cursor: pointer;
+}
