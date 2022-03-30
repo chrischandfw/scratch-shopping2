@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./shopping.css">
+    <title>Shopping List</title>
 </head>
 
 <body>
@@ -21,7 +21,16 @@
     </header>    
     <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <h1>Shopping List</h1>
+		<form class="item-form">
+			<input type="number" name="amount"> 
+			<input name="item" required >
+			<button>Add to List</button>
+		</form>
+		<button class="delete-button">Delete Shopping List</button>
+		<div class="shopping-list">
+
+		</div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
